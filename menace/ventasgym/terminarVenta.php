@@ -27,10 +27,11 @@ $sentenciaExistencia = $base_de_datos->prepare("UPDATE productos SET existencia 
 foreach ($_SESSION["carrito"] as $producto) {
 	$total += $producto->total;
 	$sentencia->execute([$producto->codigo, $idVenta, $producto->cantidad]);
-	$sentenciaExistencia->execute([$producto->cantidad, $producto->id]);
+	$sentenciaExistencia->execute([$producto->cantidad, $producto->codigo]);
 }
 $base_de_datos->commit();
 unset($_SESSION["carrito"]);
 $_SESSION["carrito"] = [];
-header("Location: ./vender.php?status=1");
+// header("Location: ./vender.php?status=1");
+header("Location: ./imprimirTicket.php?codigo=" . $resultado->codigo);
 ?>

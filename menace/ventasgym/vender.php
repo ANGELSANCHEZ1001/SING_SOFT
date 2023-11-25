@@ -76,7 +76,8 @@ $granTotal = 0;
 					<td>
 						<form action="cambiar_cantidad.php" method="post">
 							<input name="indice" type="hidden" value="<?php echo $indice; ?>">
-							<input min="1" name="cantidad" class="form-control" required type="number" step="1" value="<?php echo $producto->cantidad; ?>">
+							<input min="1" max="<?php echo $producto->existencia; ?>" 
+							name="cantidad" class="form-control" required type="number" step="1" value="<?php echo $producto->cantidad; ?>">
 						</form>
 					</td>
 					<td><?php echo $producto->total ?></td>
