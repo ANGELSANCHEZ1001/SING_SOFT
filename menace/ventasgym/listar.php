@@ -32,7 +32,7 @@ $productos = $sentencia->fetchAll(PDO::FETCH_OBJ);
 					<td><?php echo $producto->precioVenta ?></td>
 					<td><?php echo $producto->existencia ?></td>
 					<td><a class="btn btn-warning" href="<?php echo "editar.php?codigo=" . $producto->codigo?>"><i class="fa fa-edit"></i></a></td>
-					<td><a class="btn btn-danger" href="<?php echo "eliminar.php?codigo=" . $producto->codigo?>"><i class="fa fa-trash"></i></a></td>
+					<td><a class="btn btn-danger" onclick="return confirm('Estas seguro?');" href="<?php echo "eliminar.php?codigo=" . $producto->codigo?>"><i class="fa fa-trash"></i></a></td>
 				</tr>
 				<?php } ?>
 			</tbody>

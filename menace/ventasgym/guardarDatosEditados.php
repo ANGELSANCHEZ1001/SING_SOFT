@@ -18,8 +18,10 @@ $precioCompra = $_POST["precioCompra"];
 $precioVenta = $_POST["precioVenta"];
 $existencia = $_POST["existencia"];
 
+echo $existencia;
+
 $sentencia = $base_de_datos->prepare("UPDATE productos SET descripcion = ?, precioCompra = ?, precioVenta = ?, existencia = ? WHERE codigo = ?;");
-$resultado = $sentencia->execute([$codigo, $descripcion, $precioCompra, $precioVenta, $existencia]);
+$resultado = $sentencia->execute([$descripcion, $precioCompra, $precioVenta, $existencia,$codigo]);
 
 if($resultado === TRUE){
 	header("Location: ./listar.php");
