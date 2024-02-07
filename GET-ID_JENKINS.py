@@ -17,7 +17,7 @@ def obtener_ultimo_id_de_ejecucion(job_url):
         return None
 
 # Ejemplo de uso
-job_url = "http://9.18.77.59:8080/view/RAS_68/job/GET-accessors%20__RAS_68"
+job_url = "http://9.18.77.59:8080/view/RAS_68/job/GET-accessors%20RAS_68_testrail"
 last_build_id = obtener_ultimo_id_de_ejecucion(job_url)
 if last_build_id:
     print(f"ID de la última ejecución del job: {last_build_id}")
